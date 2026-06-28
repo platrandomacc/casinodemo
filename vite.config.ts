@@ -5,8 +5,6 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
-    allowedHosts: [
-      "flipbet-u0o7.onrender.com"
-    ]
+    allowedHosts: true
   }
-})
+});
