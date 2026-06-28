@@ -65,7 +65,7 @@ export default function GamesPage() {
             {filteredGames.map((game) => (
               <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[44%] snap-center sm:min-w-[36%] overflow-hidden rounded-[12px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
                 <div className="aspect-[4/5]">
-                  <img src={game.image} alt={game.title} className="h-full w-full object-contain" />
+                  <img src={game.image} alt={game.title} className="h-full w-full object-contain transition-transform duration-200 ease-out" style={{ willChange: 'transform, opacity' }} />
                 </div>
               </Link>
             ))}
@@ -85,7 +85,7 @@ export default function GamesPage() {
                 </button>
               </div>
               <div className="mt-4 aspect-[4/5] overflow-hidden rounded-[16px]">
-                <img src={game.image} alt={game.title} className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]" />
+                <img src={game.image} alt={game.title} className="h-full w-full object-cover transition-transform duration-200 ease-out" style={{ willChange: 'transform, opacity' }} />
               </div>
               <div className="mt-4 flex items-center justify-between text-sm text-[#8D95A8]">
                 <span>{game.provider}</span>
