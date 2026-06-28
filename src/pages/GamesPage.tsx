@@ -72,9 +72,9 @@ export default function GamesPage() {
           </div>
         </div>
 
-        <div className="hidden md:grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="hidden md:grid gap-4 md:grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))]">
           {filteredGames.map((game) => (
-            <Card key={game.title} className="relative">
+            <Card key={game.title} className="relative rounded-[16px] p-3">
               <Link to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} aria-label={`Open ${game.title}`} className="absolute inset-0 z-10" />
               <div className="flex items-start justify-between">
                 <div>
@@ -85,7 +85,7 @@ export default function GamesPage() {
                   <Heart size={15} />
                 </button>
               </div>
-              <div className="mt-4 aspect-[4/5] overflow-hidden rounded-[16px]">
+              <div className="mt-3 aspect-[4/5] overflow-hidden rounded-[14px]">
                 <img src={game.image} alt={game.title} className="h-full w-full object-cover transition-transform duration-200 ease-out" style={{ willChange: 'transform, opacity' }} />
               </div>
               <div className="mt-4 flex items-center justify-between text-sm text-[#8D95A8]">

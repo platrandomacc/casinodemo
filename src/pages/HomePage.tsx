@@ -80,16 +80,16 @@ export default function HomePage() {
           <div className="mt-2 text-center text-xs text-[#8D95A8]">Swipe to explore</div>
         </div>
 
-        <div className="hidden md:grid gap-4 md:grid-cols-3">
+        <div className="hidden md:grid gap-3 md:grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))]">
           {featuredgames.map((game, index) => (
-            <motion.article key={game.title} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.06 }} className="relative group overflow-hidden rounded-[20px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
+            <motion.article key={game.title} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.06 }} className="relative group overflow-hidden rounded-[12px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
               <div className={`relative aspect-[4/5] bg-gradient-to-br ${game.accent}`}>
-                <img src={game.image} alt={game.title} className="h-full w-full object-cover object-center mix-blend-screen transition-transform duration-200 ease-out" style={{ willChange: 'transform, opacity' }} />
+                <img src={game.image} alt={game.title} className="h-full w-full object-contain object-center mix-blend-screen transition-transform duration-200 ease-out" style={{ willChange: 'transform, opacity' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#06070A] to-transparent" />
                 <div className="absolute left-4 top-4 rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#06070A]/80 px-3 py-1 text-xs uppercase tracking-[0.3em] text-[#3B82F6]">{game.category}</div>
               </div>
               <Link to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} aria-label={`Open ${game.title}`} className="absolute inset-0 z-10" />
-              <div className="p-5">
+              <div className="p-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <h3 className="text-lg font-semibold text-white">{game.title}</h3>
@@ -97,7 +97,7 @@ export default function HomePage() {
                   </div>
                   <div className="rounded-full border border-[#16A34A]/20 bg-[#16A34A]/10 px-3 py-1 text-sm font-medium text-[#16A34A]">{game.rtp}</div>
                 </div>
-                <div className="mt-5 flex items-center justify-between">
+                <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-sm text-[#B7BDCB]">
                     <Clock3 size={14} />
                     8 min avg.
