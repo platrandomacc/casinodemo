@@ -72,7 +72,7 @@ export default function GamesPage() {
                     <Heart size={15} />
                   </button>
                 </div>
-                <div className="mt-4 h-36 overflow-hidden rounded-[16px]">
+                <div className="mt-4 aspect-[4/5] overflow-hidden rounded-[16px]">
                   <img src={game.image} alt={game.title} className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]" />
                 </div>
                 <div className="mt-4 flex items-center justify-between text-sm text-[#8D95A8]">
@@ -106,7 +106,7 @@ export default function GamesPage() {
                   <Heart size={15} />
                 </button>
               </div>
-              <div className="mt-4 h-36 overflow-hidden rounded-[16px]">
+              <div className="mt-4 aspect-[4/5] overflow-hidden rounded-[16px]">
                 <img src={game.image} alt={game.title} className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]" />
               </div>
               <div className="mt-4 flex items-center justify-between text-sm text-[#8D95A8]">
