@@ -5,7 +5,7 @@ export const featuredgames = [
     rtp: '97.4%',
     category: 'Live Casino',
     accent: 'from-[#22C55E]/35 to-[#16A34A]/20',
-    image: 'https://cdn.discordapp.com/attachments/1512658367150166178/1516880552639074415/file_000000001a3872078df5e2749b6c87e4.png',
+    image: '/images/towers.png',
   },
   {
     title: 'Hilo',
@@ -13,7 +13,7 @@ export const featuredgames = [
     rtp: '96.8%',
     category: 'Table Games',
     accent: 'from-[#3B82F6]/30 to-[#22C55E]/10',
-    image: 'https://cdn.discordapp.com/attachments/1512658367150166178/1516889594006736976/file_000000001c407207862490c82843e42a.png',
+    image: '/images/hilo.png',
   },
   {
     title: 'Blackjack',
@@ -21,7 +21,7 @@ export const featuredgames = [
     rtp: '98.7%',
     category: 'Table Games',
     accent: 'from-[#16A34A]/20 to-[#22C55E]/20',
-    image: 'https://cdn.discordapp.com/attachments/1512658367150166178/1512713517151813762/file_000000008018720b9f222a89c1c2863f.png',
+    image: '/images/blackjack.png',
   },
 ];
 

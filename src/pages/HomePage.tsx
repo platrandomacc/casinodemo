@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <SectionHeading title="Featured games" subtitle="A curated mix of premium titles and live table energy" action={<Button variant="ghost" className="px-0">Browse all</Button>} />
+        <SectionHeading title="Originals" subtitle="A curated mix of premium titles and live table energy" action={<Button variant="ghost" className="px-0">Browse all</Button>} />
         <div className="grid gap-4 md:grid-cols-3">
           {featuredgames.map((game, index) => (
             <motion.article key={game.title} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.06 }} className="group overflow-hidden rounded-[20px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
