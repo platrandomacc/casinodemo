@@ -74,13 +74,14 @@ export default function GamesPage() {
 
         <div className="hidden md:grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {filteredGames.map((game) => (
-            <Card key={game.title}>
+            <Card key={game.title} className="relative">
+              <Link to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} aria-label={`Open ${game.title}`} className="absolute inset-0 z-10" />
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-[#3B82F6]">{game.category}</p>
                   <h3 className="mt-2 text-lg font-semibold text-white">{game.title}</h3>
                 </div>
-                <button aria-label={`Favorite ${game.title}`} className="rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#171A22] p-2 text-[#8D95A8] transition hover:text-[#3B82F6]">
+                <button aria-label={`Favorite ${game.title}`} className="relative z-20 rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#171A22] p-2 text-[#8D95A8] transition hover:text-[#3B82F6]">
                   <Heart size={15} />
                 </button>
               </div>
@@ -99,7 +100,7 @@ export default function GamesPage() {
                   <p className="text-xs uppercase tracking-[0.28em] text-[#8D95A8]">RTP</p>
                   <p className="text-sm font-medium text-[#16A34A]">{game.rtp}</p>
                 </div>
-                <Button variant="outline">Launch</Button>
+                <Button variant="outline" className="relative z-20">Launch</Button>
               </div>
             </Card>
           ))}
