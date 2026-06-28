@@ -16,13 +16,31 @@ export const featuredgames = [
     image: '/images/hilo.png',
   },
   {
-    title: 'Blackjack',
+    title: 'Mines',
+    provider: 'Flip Bet',
+    rtp: '99.5%',
+    category: 'Live Casino',
+    accent: 'from-[#16A34A]/20 to-[#22C55E]/20',
+    image: '/images/mines.png',
+  
+  },
+  {
+    title: 'Limbo',
     provider: 'Flip Bet',
     rtp: '98.7%',
-    category: 'Table Games',
+    category: 'Live Casino',
     accent: 'from-[#16A34A]/20 to-[#22C55E]/20',
-    image: '/images/blackjack.png',
+    image: '/images/limbo.png',
   },
+  {
+    title: 'Coinflip',
+    provider: 'Flip Bet',
+    rtp: '98.7%',
+    category: 'Live Casino',
+    accent: 'from-[#16A34A]/20 to-[#22C55E]/20',
+    image: '/images/coinflip.png',
+  },
+
 ];
 
 export const categories = ['Live', 'Slots', 'Table Games', 'Jackpots', 'Instant'];

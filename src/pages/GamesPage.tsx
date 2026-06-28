@@ -1,5 +1,6 @@
 import { Filter, Heart, Search, SlidersHorizontal, Star } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -60,36 +61,13 @@ export default function GamesPage() {
 
       <div className="space-y-4">
         <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4">
-          <div className="flex gap-4 snap-x snap-mandatory touch-pan-x overflow-x-auto">
+          <div className="flex gap-4 snap-x snap-mandatory scrolling-touch overflow-x-auto">
             {filteredGames.map((game) => (
-              <Card key={game.title} className="min-w-[84%] snap-center sm:min-w-[70%]">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.3em] text-[#3B82F6]">{game.category}</p>
-                    <h3 className="mt-2 text-lg font-semibold text-white">{game.title}</h3>
-                  </div>
-                  <button aria-label={`Favorite ${game.title}`} className="rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#171A22] p-2 text-[#8D95A8] transition hover:text-[#3B82F6]">
-                    <Heart size={15} />
-                  </button>
+              <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[84%] snap-center sm:min-w-[70%] overflow-hidden rounded-[16px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
+                <div className="aspect-[4/5]">
+                  <img src={game.image} alt={game.title} className="h-full w-full object-cover" />
                 </div>
-                <div className="mt-4 aspect-[4/5] overflow-hidden rounded-[16px]">
-                  <img src={game.image} alt={game.title} className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]" />
-                </div>
-                <div className="mt-4 flex items-center justify-between text-sm text-[#8D95A8]">
-                  <span>{game.provider}</span>
-                  <div className="flex items-center gap-1 text-[#3B82F6]">
-                    <Star size={14} fill="currentColor" />
-                    <span>4.9</span>
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.28em] text-[#8D95A8]">RTP</p>
-                    <p className="text-sm font-medium text-[#16A34A]">{game.rtp}</p>
-                  </div>
-                  <Button variant="outline">Launch</Button>
-                </div>
-              </Card>
+              </Link>
             ))}
           </div>
         </div>
