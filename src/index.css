@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f7f7f8;
+  background-color: #06070A;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(34,197,94,.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(59,130,246,.10), transparent 28%),
+    linear-gradient(180deg,#0b0d12 0%,#06070A 100%);
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34,197,94,0.9) rgba(255,255,255,0.04);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(34,197,94,0.9);
+  border-radius: 9999px;
+  border: 2px solid rgba(11,19,27,0.8);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(34,197,94,1);
+}
+
+::selection {
+  background: rgba(34,197,94,.35);
+  color: white;
+}
