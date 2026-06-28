@@ -66,7 +66,38 @@ export default function HomePage() {
 
       <section>
         <SectionHeading title="Originals" subtitle="A curated mix of premium titles and live table energy" action={<Button variant="ghost" className="px-0">Browse all</Button>} />
-        <div className="grid gap-4 md:grid-cols-3">
+
+        <div className="md:hidden">
+          <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory touch-pan-x">
+            {featuredgames.map((game, index) => (
+              <motion.article key={game.title} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.04 }} className="min-w-[84%] snap-center overflow-hidden rounded-[20px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
+                <div className={`relative aspect-[4/5] bg-gradient-to-br ${game.accent}`}>
+                  <img src={game.image} alt={game.title} className="h-full w-full object-cover object-center mix-blend-screen" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#06070A] to-transparent" />
+                  <div className="absolute left-4 top-4 rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#06070A]/80 px-3 py-1 text-xs uppercase tracking-[0.3em] text-[#3B82F6]">{game.category}</div>
+                </div>
+                <div className="p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{game.title}</h3>
+                      <p className="mt-1 text-sm text-[#8D95A8]">{game.provider}</p>
+                    </div>
+                    <div className="rounded-full border border-[#16A34A]/20 bg-[#16A34A]/10 px-3 py-1 text-sm font-medium text-[#16A34A]">{game.rtp}</div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm text-[#B7BDCB]">
+                      <Clock3 size={14} />
+                      8 min avg.
+                    </div>
+                    <button className="rounded-full border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-white/[0.04] px-3 py-2 text-sm text-[#F7F7F8] transition hover:border-[#22C55E]/25 hover:text-[#3B82F6]">Play</button>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:grid gap-4 md:grid-cols-3">
           {featuredgames.map((game, index) => (
             <motion.article key={game.title} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.06 }} className="group overflow-hidden rounded-[20px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
               <div className={`relative aspect-[4/5] bg-gradient-to-br ${game.accent}`}>
