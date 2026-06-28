@@ -63,9 +63,9 @@ export default function GamesPage() {
         <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4">
           <div className="flex gap-4 snap-x snap-mandatory scrolling-touch overflow-x-auto">
             {filteredGames.map((game) => (
-              <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[84%] snap-center sm:min-w-[70%] overflow-hidden rounded-[16px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
+              <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[44%] snap-center sm:min-w-[36%] overflow-hidden rounded-[12px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
                 <div className="aspect-[4/5]">
-                  <img src={game.image} alt={game.title} className="h-full w-full object-cover" />
+                  <img src={game.image} alt={game.title} className="h-full w-full object-contain" />
                 </div>
               </Link>
             ))}

@@ -70,9 +70,9 @@ export default function HomePage() {
         <div className="md:hidden">
           <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrolling-touch">
             {featuredgames.map((game, index) => (
-              <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[84%] snap-center overflow-hidden rounded-[16px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
+              <Link key={game.title} to={'/games/' + game.title.toLowerCase().replace(/\s+/g, '-')} className="min-w-[44%] snap-center overflow-hidden rounded-[12px] border border-transparent hover:border-sky-500/25 hover:border-emerald-500/40 bg-[#12141B]">
                 <div className={`relative aspect-[4/5]`}>
-                  <img src={game.image} alt={game.title} className="h-full w-full object-cover object-center" />
+                  <img src={game.image} alt={game.title} className="h-full w-full object-contain object-center" />
                 </div>
               </Link>
             ))}
